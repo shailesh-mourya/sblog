@@ -7,6 +7,7 @@ import { UsersComponent } from './admin/users/users.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegComponent } from './user-reg/user-reg.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export const routes: Routes = [
     {path:"",redirectTo:"home",pathMatch:"full"},
@@ -21,5 +22,8 @@ export const routes: Routes = [
     ]},
     {path:"user-login",component:UserLoginComponent},
     {path:"user-reg",component:UserRegComponent}
+    ,
+    // wildcard route or page not found
+    {path:'**',component:PageNotFoundComponent,title:'page not found'}
     
 ];
