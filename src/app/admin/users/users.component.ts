@@ -11,6 +11,7 @@ import { RegServiceService } from '../../users-service/reg-service.service';
 export class UsersComponent {
   //4
   users!:any;
+  phoneNumber!:any;
 
   //5
   constructor(private us:RegServiceService){}
@@ -21,6 +22,14 @@ export class UsersComponent {
       this.users=data;
     })
   }
+
+  deleteUser(phoneNumber:any){
+    this.us.deleteUser(phoneNumber).subscribe(()=>{
+      console.log("deleted");
+      
+    })
+  }
   
+
 
 }

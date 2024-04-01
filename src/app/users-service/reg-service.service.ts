@@ -16,4 +16,14 @@ export class RegServiceService {
   getUser():Observable<any>{
     return this.http.get(`${this.url}/users/showusers`)
   }
+
+  //
+  addUser(user:any):Observable<any>{
+    return this.http.post(`${this.url}/users/addusers`,user);
+  }
+
+  deleteUser(phoneNumber:any):Observable<any>{
+    return this.http.delete(`${this.url}/users/deleteusers/${phoneNumber}`);
+  }
+
 }
