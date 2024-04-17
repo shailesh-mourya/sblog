@@ -2,41 +2,46 @@
 
     <div class="container-fluid bg-white  p-lg-5 rounded-3 ">
         <h1 class="text-center bg-secondary  rounded-circle">New Blog</h1>
-        <div class="row">
-            <div class="col">
-                <div class="mb-3">
-                    <label for="title" class="form-label">Title</label>
-                    <input type="title" class="form-control" name="title" id="title" aria-describedby="helpId"
-                        placeholder="enter title of blog" />
-                    <small id="helpId" class="form-text text-muted">Help text</small>
-                </div>
-
-            </div>
+        <form [formGroup]="postsForm" (ngSubmit)="Add()">
             <div class="row">
                 <div class="col">
                     <div class="mb-3">
-                        <label for="description" class="form-label">Description</label>
-                        <input type="text" class="form-control" name="description" id="description"
-                            aria-describedby="helpId" placeholder="enter blog Description" />
+                        <label for="title" class="form-label">Title</label>
+                        <input type="title" class="form-control" name="title" id="title" aria-describedby="helpId"
+                            placeholder="enter title of blog" formControlName="title" />
                         <small id="helpId" class="form-text text-muted">Help text</small>
                     </div>
 
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="mb-3">
-                        <label for="content" class="form-label">Blog content</label>
-                        <textarea class="form-control" name="content" id="content" rows="50"></textarea>
-                    </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <input type="text" class="form-control" name="description" id="description"
+                                aria-describedby="helpId" placeholder="enter blog Description"
+                                formControlName="description" />
+                            <small id="helpId" class="form-text text-muted">Help text</small>
+                        </div>
 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="content" class="form-label">Blog content</label>
+                            <textarea class="form-control" name="content" id="content" rows="50"
+                                formControlName="content"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col pb-3">
+                        <!-- <button type="submit" class="btn col-12 btn-outline-success">Post</button> -->
+                        <input class="btn col-12 btn-success btn-sm" type="submit" value="Submit" />
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col pb-3">
-                    <button type="submit" class="btn col-12 btn-outline-success">Post</button>
-                </div>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
