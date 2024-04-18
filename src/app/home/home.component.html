@@ -127,56 +127,64 @@
                 <h2 class="display-5 link-body-emphasis mb-1">Another blog post</h2>
                 <p class="blog-post-meta">December 23, 2020 by <a href="#">Jacob</a></p>
 
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available
-                    space and
-                    show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the
-                    demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <blockquote>
-                    <p>Longer quote goes here, maybe with some <strong>emphasized text</strong> in the middle of it.</p>
-                </blockquote>
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available
-                    space and
-                    show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the
-                    demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <h3>Example table</h3>
-                <p>And don't forget about tables in these posts:</p>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Upvotes</th>
-                            <th>Downvotes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Alice</td>
-                            <td>10</td>
-                            <td>11</td>
-                        </tr>
-                        <tr>
-                            <td>Bob</td>
-                            <td>4</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>Charlie</td>
-                            <td>7</td>
-                            <td>9</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>Totals</td>
-                            <td>21</td>
-                            <td>23</td>
-                        </tr>
-                    </tfoot>
-                </table>
 
-                <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other
-                    highly
-                    repetitive body text used throughout.</p>
+
+                <div class="container">
+                    <div class="row">
+                        @for( p of showdata;track p.title){
+                        
+                            <div class="col-lg-6 mt-2" (click)="blogId(box.value)" [routerLink]="['/blog']"
+                            routerLinkActive="router-link-active">
+                                <div class="card">
+
+                                    <div class="card-body">
+                                        <a
+                                            class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top">
+                                            <svg class="bd-placeholder-img" width="100%" height="96"
+                                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                                                <rect width="100%" height="100%" fill="#777"></rect>
+                                            </svg>
+                                            <div class="col-lg-8">
+                                                <h6 class="mb-0">{{p.title}}</h6>
+                                                <input type="hidden" #box [(ngModel)]="p.title" id="id" name="id">
+                                                <small class=" text-body-secondary">{{p.date}}</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                       
+
+                        }
+                        <!-- 
+
+                        <div class="col-lg-6 mt-2">
+                            <div class="card">
+
+                                <div class="card-body">
+                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                        href="#">
+                                        <svg class="bd-placeholder-img" width="100%" height="96"
+                                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                                            <rect width="100%" height="100%" fill="#777"></rect>
+                                        </svg>
+                                        <div class="col-lg-8">
+                                            <h6 class="mb-0">Example blog post title</h6>
+                                            <small class="text-body-secondary">January 15, 2024</small>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div> -->
+
+                    </div>
+                </div>
+
+
             </article>
 
             <article class="blog-post">
@@ -197,8 +205,8 @@
                     repetitive body text used throughout.</p>
             </article>
 
-           
-             <!-- the above content by dynamic end -->
+
+            <!-- the above content by dynamic end -->
         </div>
         <!-- divider -->
         <div class="col-md-4">
@@ -276,7 +284,7 @@
                     </ol>
                 </div>
 
-        
+
             </div>
         </div>
     </div>

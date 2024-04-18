@@ -1,0 +1,42 @@
+<div *ngIf="blog" class="container">
+    @for(c of blog ; track c.title ){
+    <div class="row mt-5">
+        <div class="col">
+
+            <div class="bg-primary p-3 rounded-3">
+                <h3 class="">Title:</h3>
+                <h5 style="font-style: italic;">"{{c.title}}"</h5>
+            </div>
+
+            <h5 class="mt-4">
+                Description:
+            </h5>
+            <P>
+               {{c.description}}
+            </P>
+
+            <h5>
+                Content:
+
+            </h5>
+            <p>
+                {{c.content}}
+            </p>
+
+            <p>
+                <span style="font-weight: bold;">Author:</span>
+                {{c.author}}
+            </p>
+
+            <p>
+                <span style="font-weight: bold;">Date:</span>
+
+                {{c.date}}
+            </p>
+
+
+
+        </div>
+    </div>
+    }
+</div>

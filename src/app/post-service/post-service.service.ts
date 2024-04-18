@@ -19,6 +19,11 @@ export class PostServiceService {
   }
 
   //
+  showTitlePostService(title:any):Observable<any>{
+    return this.http.get(`${this.url}/post/showtitlepost/${title}`);
+  }
+
+  //
   addPost(posts:any):Observable<any>{
     return this.http.post(`${this.url}/post/addpost`,posts);
   }
