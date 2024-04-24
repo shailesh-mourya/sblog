@@ -19,8 +19,8 @@ export class PostServiceService {
   }
 
   //
-  showTitlePostService(title:any):Observable<any>{
-    return this.http.get(`${this.url}/post/showtitlepost/${title}`);
+  showTitlePostService(blog_id:any):Observable<any>{
+    return this.http.get(`${this.url}/post/showtitlepost/${blog_id}`);
   }
 
   //
@@ -28,8 +28,13 @@ export class PostServiceService {
     return this.http.post(`${this.url}/post/addpost`,posts);
   }
 
-  deletePost(title:any):Observable<any>{
-    return this.http.delete(`${this.url}/post/deletepost/${title}`);
+  //
+  updatePost(blog_id:any,blogdata:any){
+    return this.http.put(`${this.url}/posts/${blog_id}`,blogdata);
+  }
+
+  deletePost(blog_id:any):Observable<any>{
+    return this.http.delete(`${this.url}/post/deletepost/${blog_id}`);
   }
 
 }

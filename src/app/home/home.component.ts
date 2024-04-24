@@ -4,7 +4,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { PostServiceService } from '../post-service/post-service.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +17,7 @@ export class HomeComponent {
   showdata!:any;
 
 
-  constructor(private np : PostServiceService){
+  constructor(private np : PostServiceService,private router: Router){
      
   }
 
@@ -27,8 +27,10 @@ export class HomeComponent {
     })
   }
 
-  blogId(val:string){
-   sessionStorage.setItem("blogid",val);
+  blogId(blog_id:string){
+  // sessionStorage.setItem("blogid",val);
+  this.router.navigate(['blog'],{queryParams:{blog_id}})
+
 
    
   }

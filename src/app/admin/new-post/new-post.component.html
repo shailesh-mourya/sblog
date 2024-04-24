@@ -2,16 +2,27 @@
 
     <div class="container-fluid bg-white  p-lg-5 rounded-3 ">
         <h1 class="text-center bg-secondary  rounded-circle">New Blog</h1>
-        @for(u of showtoupdate;track u.title){
 
 
-        <form [formGroup]="postsForm" (ngSubmit)="Add()">
+
+        <form [formGroup]="postsForm" (ngSubmit)="onSwitch()">
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Blog id</label>
+                        <input type="title" class="form-control" formControlName="blog_id" name="blog_id" id="blog_id"
+                            aria-describedby="helpId" placeholder="enter blog id " />
+                        <small id="helpId" class="form-text text-muted">Help text</small>
+                    </div>
+
+                </div>
+            </div>
             <div class="row">
                 <div class="col">
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
-                        <input type="title" class="form-control" name="title" id="title" aria-describedby="helpId"
-                            placeholder="enter title of blog" formControlName="title" [(ngModel)]="u.title" />
+                        <input type="title" class="form-control" formControlName="title" name="title" id="title"
+                            aria-describedby="helpId" placeholder="enter title of blog" />
                         <small id="helpId" class="form-text text-muted">Help text</small>
                     </div>
 
@@ -21,7 +32,7 @@
                         <div class="mb-3">
                             <label for="description" class="form-label">Date</label>
                             <input type="date" class="form-control" name="date" id="date" aria-describedby="helpId"
-                                placeholder="enter blog date" formControlName="date" [(ngModel)]="u.date" />
+                                placeholder="enter blog date" formControlName="date" />
                             <small id="helpId" class="form-text text-muted">Help text</small>
                         </div>
 
@@ -33,7 +44,7 @@
                             <label for="description" class="form-label">Description</label>
                             <input type="text" class="form-control" name="description" id="description"
                                 aria-describedby="helpId" placeholder="enter blog Description"
-                                formControlName="description" [(ngModel)]="u.description" />
+                                formControlName="description" />
                             <small id="helpId" class="form-text text-muted">Help text</small>
                         </div>
 
@@ -44,7 +55,7 @@
                         <div class="mb-3">
                             <label for="content" class="form-label">Blog content</label>
                             <textarea class="form-control" name="content" id="content" rows="50"
-                                formControlName="content" [(ngModel)]="u.content"></textarea>
+                                formControlName="content"></textarea>
                         </div>
 
                     </div>
@@ -54,7 +65,7 @@
                         <div class="mb-3">
                             <label for="author" class="form-label">Author Name</label>
                             <input type="text" class="form-control" name="author" id="author" aria-describedby="helpId"
-                                placeholder="enter blog author name" formControlName="author" [(ngModel)]="u.author" />
+                                placeholder="enter blog author name" formControlName="author" />
                             <small id="helpId" class="form-text text-muted">Help text</small>
                         </div>
 
@@ -63,15 +74,15 @@
                 <div class="row">
                     <div class="col pb-3">
                         <!-- <button type="submit" class="btn col-12 btn-outline-success">Post</button> -->
-                        <input class="btn col-12 btn-success btn-sm" type="submit" value="Submit" />
+                        <input class="btn col-12 btn-success btn-sm" type="submit" value="submit" name="submit" />
                     </div>
-                    <div class="col pb-3">
-                        <!-- <button type="submit" class="btn col-12 btn-outline-success">Post</button> -->
+                    <!-- <div class="col pb-3">
+                        <button type="submit" class="btn col-12 btn-outline-success">Post</button>
                         <input class="btn col-12 btn-success btn-sm" type="submit" value="Update" />
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </form>
-        }
+
     </div>
 </div>
